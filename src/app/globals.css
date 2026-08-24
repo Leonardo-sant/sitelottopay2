@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ciano: #16A6B3;
+  --color-ciano-claro: #3FC6D2;
+  --color-ciano-esc: #0E7C88;
+  --color-navy: #16266B;
+  --color-navy-esc: #101B4D;
+  --color-navy-deep: #0A1235;
+  --color-verde: #7AC943;
+  --color-branco: #FFFFFF;
+  --color-gelo: #F4F8F9;
+  --color-cinza-txt: #5A6577;
+  --color-txt-claro: #CFE6EA;
+  
+  --font-display: var(--font-outfit);
+  --font-corpo: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: var(--color-ciano);
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 1.12;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgba(63, 198, 210, 0.65); }
+  70% { box-shadow: 0 0 0 10px rgba(63, 198, 210, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(63, 198, 210, 0); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2.2s infinite;
+}
+
+/* Hero Background and Grid */
+@keyframes grid-pan {
+  0% { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 0px 82px, 108px 0px; }
+}
+
+.animate-grid-pan {
+  animation: grid-pan 8s linear infinite;
+}
+
+.bg-hero-grad {
+  background: linear-gradient(150deg, var(--color-navy) 0%, var(--color-navy-esc) 55%, var(--color-ciano-esc) 130%);
+}
+
+.hero-grid-overlay {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 100% 82px, 108px 100%;
+  mask-image: radial-gradient(ellipse at 50% 42%, #000, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 42%, #000, transparent 78%);
 }
