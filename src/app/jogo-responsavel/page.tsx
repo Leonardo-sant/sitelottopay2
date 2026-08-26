@@ -75,14 +75,14 @@ export default function JogoResponsavel() {
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-[600px] mx-auto">
-              <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:bg-white/10">
-                <span className="font-display font-bold text-xl text-white">LOTERIA DA GENTE</span>
+              <a href="https://loteriadagente.com.br" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:bg-white/10 hover:border-ciano/50 group cursor-pointer no-underline">
+                <span className="font-display font-bold text-xl text-white group-hover:text-ciano-claro transition-colors">LOTERIA DA GENTE</span>
                 <span className="text-sm text-ciano-claro mt-1">Operador Oficial</span>
-              </div>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:bg-white/10">
-                <span className="font-display font-bold text-xl text-white">RAIZ BET</span>
+              </a>
+              <a href="https://raizbet.com.br" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:bg-white/10 hover:border-ciano/50 group cursor-pointer no-underline">
+                <span className="font-display font-bold text-xl text-white group-hover:text-ciano-claro transition-colors">RAIZ BET</span>
                 <span className="text-sm text-ciano-claro mt-1">Operador Oficial</span>
-              </div>
+              </a>
             </div>
           </AnimatedEntry>
 

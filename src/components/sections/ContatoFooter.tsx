@@ -69,7 +69,7 @@ export function ContatoFooter() {
             <div>
               <h5 className="font-display font-semibold text-[12.5px] tracking-[2.2px] uppercase text-ciano-claro mb-[18px]">Operações</h5>
               <div className="flex flex-col gap-[11px]">
-                <a href="/#onde" className="text-txt-claro text-[0.96rem] font-light transition-colors hover:text-ciano-claro">Casos de Sucesso</a>
+                <a href="/#marcas" className="text-txt-claro text-[0.96rem] font-light transition-colors hover:text-ciano-claro">Casos de Sucesso</a>
                 <a href="/#modalidades" className="text-txt-claro text-[0.96rem] font-light transition-colors hover:text-ciano-claro">Modalidades</a>
                 <a href="/#impacto" className="text-txt-claro text-[0.96rem] font-light transition-colors hover:text-ciano-claro">Impacto social</a>
                 <a href="/#contato" className="text-txt-claro text-[0.96rem] font-light transition-colors hover:text-ciano-claro">Novos estados</a>
@@ -88,9 +88,12 @@ export function ContatoFooter() {
           </div>
 
           <div className="mt-[52px] pt-[32px] border-t border-white/12 flex flex-col md:flex-row justify-between items-center gap-[24px]">
-            <div className="flex flex-col gap-2 text-center md:text-left font-display font-normal text-[13.5px] text-white/55">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left font-display font-normal text-[13.5px] text-white/55">
               <span>© {ano} Lottopay. Todos os direitos reservados.</span>
-              <span>Proibido para menores de 18 anos. Jogue com responsabilidade.</span>
+              <div className="flex items-center gap-2">
+                <span className="flex items-center justify-center w-7 h-7 rounded-full border border-white/55 text-[11px] font-bold shrink-0">18+</span>
+                <span>Proibido para menores de 18 anos. Jogue com responsabilidade.</span>
+              </div>
             </div>
             
             <div className="flex flex-col gap-1.5 text-center md:text-right text-[14px]">

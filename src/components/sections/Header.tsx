@@ -20,7 +20,7 @@ export function Header() {
     >
       <div className="w-[min(1240px,90vw)] mx-auto">
         <nav className="flex items-center justify-between relative gap-5">
-          <a href="#topo" className="flex items-center gap-[11px] no-underline">
+          <a href="/" className="flex items-center gap-[11px] no-underline">
             <svg viewBox="0 0 48 48" aria-hidden="true" className="w-[34px] h-[34px] shrink-0">
               <g fill="none" stroke="#3FC6D2" strokeWidth="2.6" strokeLinejoin="round">
                 <path d="M24 4l6 6-6 6-6-6z" />
@@ -37,6 +37,7 @@ export function Header() {
           <ul className="hidden md:flex gap-[26px] items-center list-none">
             <li><NavLink href="/quem-somos">Quem somos</NavLink></li>
             <li><NavLink href="/#solucoes">Soluções</NavLink></li>
+            <li><NavLink href="/#marcas">Marcas</NavLink></li>
             <li><NavLink href="/#modalidades">Modalidades</NavLink></li>
             <li><NavLink href="/jogo-responsavel">Jogo Responsável</NavLink></li>
             <li>
@@ -67,6 +68,7 @@ export function Header() {
           >
             <MobileNavLink href="/quem-somos" onClick={() => setMenuOpen(false)}>Quem somos</MobileNavLink>
             <MobileNavLink href="/#solucoes" onClick={() => setMenuOpen(false)}>Soluções</MobileNavLink>
+            <MobileNavLink href="/#marcas" onClick={() => setMenuOpen(false)}>Marcas</MobileNavLink>
             <MobileNavLink href="/#modalidades" onClick={() => setMenuOpen(false)}>Modalidades</MobileNavLink>
             <MobileNavLink href="/jogo-responsavel" onClick={() => setMenuOpen(false)}>Jogo Responsável</MobileNavLink>
             <a href="/#contato" onClick={() => setMenuOpen(false)} className="bg-ciano text-white px-[22px] py-2.5 rounded-lg font-display font-semibold text-[15px] text-center mt-2">

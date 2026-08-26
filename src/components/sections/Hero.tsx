@@ -21,7 +21,7 @@ export function Hero() {
       id="topo" 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="bg-hero-grad text-white pt-[134px] pb-[80px] md:pt-[172px] md:pb-[108px] relative overflow-hidden"
+      className="bg-hero-grad text-white pt-[140px] pb-[80px] md:pt-[190px] md:pb-[140px] relative overflow-hidden"
     >
       {/* Interactive Mouse Spotlight (Only visible on md+ screens to save mobile perf) */}
       <motion.div
@@ -36,60 +36,118 @@ export function Hero() {
         transition={{ type: "tween", ease: "easeOut", duration: 0.5 }}
       />
 
-      {/* Floating Geometric Orbits */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 160, repeat: Infinity, ease: "linear" }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140vw] h-[140vw] max-w-[1600px] max-h-[1600px] pointer-events-none z-0 opacity-[0.05]"
-      >
-        <div className="absolute top-[10%] left-[20%] w-[350px] h-[350px] border-[2px] border-white rounded-full" />
-        <div className="absolute bottom-[20%] right-[15%] w-[500px] h-[500px] border-[2px] border-white rounded-full" />
-        <img src="/symbol-lottopay.png" alt="" className="absolute top-[38%] right-[22%] w-[260px] h-[260px] opacity-80" />
-      </motion.div>
-
       {/* Decorative gradients */}
-      <div className="absolute w-[880px] h-[880px] rounded-full -right-[300px] -top-[360px] bg-[radial-gradient(circle,rgba(63,198,210,0.28),transparent_66%)] pointer-events-none z-0" />
-      <div className="absolute w-[700px] h-[700px] rounded-full -left-[320px] -bottom-[400px] bg-[radial-gradient(circle,rgba(22,166,179,0.22),transparent_66%)] pointer-events-none z-0" />
+      <div className="absolute w-[880px] h-[880px] rounded-full -right-[300px] -top-[360px] bg-[radial-gradient(circle,rgba(63,198,210,0.18),transparent_66%)] pointer-events-none z-0" />
+      <div className="absolute w-[700px] h-[700px] rounded-full -left-[320px] -bottom-[400px] bg-[radial-gradient(circle,rgba(22,166,179,0.15),transparent_66%)] pointer-events-none z-0" />
       
-      {/* Animated Flowing Grid Overlay */}
-      <div className="hero-grid-overlay animate-grid-pan absolute inset-0 opacity-45 pointer-events-none z-0" />
-
       <motion.div 
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="relative z-10 text-center max-w-[1010px] mx-auto w-[min(1240px,90vw)]"
+        className="relative z-10 mx-auto w-[min(1240px,90vw)] grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-8 items-center"
       >
-        <motion.span variants={itemReveal} className="inline-flex items-center gap-[9px] border border-ciano-claro/55 bg-ciano-claro/13 rounded-full px-5 py-2 font-display font-medium text-[13.5px] tracking-[1.5px] uppercase text-ciano-claro mb-[34px]">
-          <span className="w-[7px] h-[7px] rounded-full bg-ciano-claro animate-pulse-dot" />
-          Tecnologia para o mercado lotérico
-        </motion.span>
+        {/* Left Column */}
+        <div className="text-left">
+          <motion.span variants={itemReveal} className="inline-flex items-center gap-[9px] border border-ciano-claro/40 bg-navy-esc/40 backdrop-blur-sm rounded-full px-[22px] py-[8px] font-display font-medium text-[12px] tracking-[1.5px] uppercase text-ciano-claro mb-[24px]">
+            Tecnologia para o mercado lotérico
+          </motion.span>
 
-        <h1 className="text-[clamp(2.35rem,5.6vw,4.4rem)] text-white tracking-[-1.6px] leading-[1.12]">
-          <span className="flex justify-center gap-[0.22em] flex-wrap">
-            {["Tecnologia", "que", "conecta"].map((word, i) => (
-              <motion.span key={i} variants={itemReveal} className="inline-block">{word}</motion.span>
-            ))}
-          </span>
-          <span className="flex justify-center gap-[0.22em] flex-wrap text-ciano-claro mt-1 md:mt-2">
-            {["estados", "e", "pessoas."].map((word, i) => (
-              <motion.span key={i} variants={itemReveal} className="inline-block">{word}</motion.span>
-            ))}
-          </span>
-        </h1>
+          <h1 className="text-[clamp(2.5rem,5.5vw,4.5rem)] text-white font-bold tracking-[-1.5px] leading-[1.05] mb-[24px]">
+            <motion.span variants={itemReveal} className="block">Tecnologia que conecta</motion.span>
+            <motion.span variants={itemReveal} className="block text-ciano-claro">estados e pessoas.</motion.span>
+          </h1>
 
-        <motion.p variants={itemReveal} className="max-w-[730px] mx-auto mt-[28px] text-[clamp(1.03rem,1.7vw,1.22rem)] text-txt-claro font-light leading-[1.6]">
-          Somos a plataforma definitiva para o novo mercado lotérico estadual. A Lottopay fornece a infraestrutura completa de tecnologia, gestão e operação para que governos e parceiros lancem suas loterias com segurança, escalabilidade e conformidade.
-        </motion.p>
+          <motion.p variants={itemReveal} className="max-w-[620px] text-[clamp(1rem,1.2vw,1.1rem)] text-white/90 font-light leading-[1.6] mb-[44px]">
+            Somos a plataforma definitiva para o mercado lotérico público.
+            Oferecemos soluções completas de estruturação, regulamentação,
+            tecnologia, gestão e operação para que governos lancem e
+            operacionalizem loterias públicas com segurança, inovação e total
+            conformidade.
+          </motion.p>
 
-        <motion.div variants={itemReveal} className="flex gap-[14px] justify-center flex-wrap mt-[44px]">
-          <a href="#solucoes" className="font-display font-semibold text-[16.5px] px-[34px] py-[15px] rounded-[10px] inline-flex items-center gap-[9px] bg-ciano text-white shadow-[0_12px_32px_-12px_rgba(22,166,179,0.9)] transition-all hover:bg-ciano-claro hover:-translate-y-[3px] hover:scale-[1.02] group">
-            Conheça nossas soluções
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" className="transition-transform group-hover:translate-x-1"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#modelo" className="font-display font-semibold text-[16.5px] px-[34px] py-[15px] rounded-[10px] inline-flex items-center gap-[9px] border-[1.5px] border-white/35 text-white transition-all hover:border-ciano-claro hover:text-ciano-claro hover:-translate-y-[3px] hover:scale-[1.02]">
-            Como atuamos
-          </a>
+          <motion.div variants={itemReveal} className="flex gap-[16px] flex-wrap">
+            <a href="#solucoes" className="font-display font-semibold text-[15.5px] px-[32px] py-[14px] rounded-lg inline-flex items-center gap-[9px] bg-ciano text-white transition-all hover:bg-ciano-claro group">
+              Conheça nossas soluções
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#modelo" className="font-display font-medium text-[15.5px] px-[32px] py-[14px] rounded-lg inline-flex items-center gap-[9px] border border-white/40 text-white transition-all hover:border-white">
+              Como atuamos
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Right Column - Map and Floating Panel */}
+        <motion.div variants={itemReveal} className="relative h-full min-h-[500px] flex items-center justify-center lg:justify-end mt-10 lg:mt-0">
+          
+          {/* Real Map Graphic - Positioned Top Right */}
+          <div className="absolute top-[-40px] right-[-40px] w-[140%] max-w-[800px] pointer-events-none z-0 flex justify-end">
+            <motion.div 
+              animate={{ 
+                y: ["-2%", "2%", "-2%"],
+              }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 8, 
+                ease: "easeInOut" 
+              }}
+            >
+              <img 
+                src="/mapa-brasil.png" 
+                alt="Conexões Brasil" 
+                className="w-[100%] h-auto object-contain opacity-90"
+              />
+            </motion.div>
+          </div>
+
+          {/* Floating Feature Panel - Positioned Bottom Right */}
+          <motion.div 
+            className="relative z-10 bg-navy/50 backdrop-blur-md border border-ciano-claro/30 rounded-[12px] p-[32px_40px] w-full max-w-[380px] mt-[160px] lg:mt-[220px] lg:mr-4"
+          >
+            <div className="flex flex-col gap-[28px]">
+              
+              <div className="flex items-center gap-[20px]">
+                <div className="w-[20px] h-[20px] flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-[24px] h-[24px] text-ciano-claro">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
+                <span className="font-corpo font-light text-[14px] text-white">Conformidade regulatória</span>
+              </div>
+
+              <div className="flex items-center gap-[20px]">
+                <div className="w-[20px] h-[20px] flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-[24px] h-[24px] text-ciano-claro">
+                    <path d="M18 20V10M12 20V4M6 20v-6" />
+                  </svg>
+                </div>
+                <span className="font-corpo font-light text-[14px] text-white">Tecnologia escalável e segura</span>
+              </div>
+
+              <div className="flex items-center gap-[20px]">
+                <div className="w-[20px] h-[20px] flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-[24px] h-[24px] text-ciano-claro">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                    <path d="M16 3.13a4 4 0 010 7.75" />
+                  </svg>
+                </div>
+                <span className="font-corpo font-light text-[14px] text-white">Gestão eficiente e transparente</span>
+              </div>
+
+              <div className="flex items-center gap-[20px]">
+                <div className="w-[20px] h-[20px] flex items-center justify-center shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-[24px] h-[24px] text-ciano-claro">
+                    <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                  </svg>
+                </div>
+                <span className="font-corpo font-light text-[14px] text-white">Impacto social positivo</span>
+              </div>
+
+            </div>
+          </motion.div>
+          
         </motion.div>
       </motion.div>
     </div>
